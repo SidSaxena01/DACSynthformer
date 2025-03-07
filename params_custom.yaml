@@ -14,17 +14,16 @@ vocab_size: 1024
 num_tokens: 4
 
 cond_params: 1 #1 (not counting the classes)
-model_size: 512  #embedding+conditioning vect
+model_size: 512  # Increase from 512 to capture more nuanced features
 
 Ti: 172 # 172 #86
 Tt: 430 # must match the length of the sequences in the batch
 batch_size: 8  #**
 
-
-num_layers: 2 #**
-num_heads: 8 # 8 # embed_size must be divisible by num_heads
+num_layers: 2
+num_heads: 8     # Increase from 8 to allow for more attention patterns
 forward_expansion: 4 # 4 #4
-dropout_rate: 0.2
+dropout_rate: 0.3      # Optimal for transformer models
 learning_rate: 0.0005
 
 num_epochs: 250 ### 800 

@@ -2,8 +2,8 @@ experiment: "first-experiment"
 #testsnd: "" # 8bit, fusion, lofi, duduk, zelda
 
 # for docker:
-data_dir: "/data/dac-train"
-validator_data_dir: "/data/dac-val"
+data_dir: "data/dac-train"
+validator_data_dir: "data/dac-val"
 
 data_frames: "data/dac-train.xlsx"
 validator_data_frames: "data/dac-val.xlsx"
@@ -14,21 +14,20 @@ vocab_size: 1024
 num_tokens: 4
 
 cond_params: 1 #1 (not counting the classes)
-model_size: 512  #embedding+conditioning vect
+model_size: 1024  # Increase from 512 to capture more nuanced features
 
 Ti: 172 # 172 #86
 Tt: 430 # must match the length of the sequences in the batch
 batch_size: 8  #**
 
-
-num_layers: 2 #**
-num_heads: 8 # 8 # embed_size must be divisible by num_heads
+num_layers: 6
+num_heads: 16    # Increase from 8 to allow for more attention patterns
 forward_expansion: 4 # 4 #4
-dropout_rate: 0.2
-learning_rate: 0.0005
+dropout_rate: 0.1
+learning_rate: 0.0001
 
-num_epochs: 250 ### 800 
+num_epochs: 800 ### 800 
 
 ErrorLogRate: 10 ### 10
-checkpoint_interval: 50 ###50 # 25
+checkpoint_interval: 100 ###50 # 25
 
