@@ -7,7 +7,7 @@ It extracts a random 5-second clip from each MP3 file and saves it as a WAV file
 The output files are saved in the "wav" directory.
 
 ```bash
-bash convert_audio.sh
+bash scripts/convert_audio.sh 'input-dir' 'output-dir'
 ```
 
 ## Encode the wav files to DAC
